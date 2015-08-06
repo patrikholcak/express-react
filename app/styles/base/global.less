@@ -1,0 +1,29 @@
+/*
+ * Rules applied to whole project (selection color, container sizes,…)
+ */
+
+@selection_color: hotPink;
+@selection_color_font: #fff;
+
+::-moz-selection {
+  background: @selection_color;
+  color: @selection_color_font;
+  text-shadow: none;
+}
+
+::selection {
+  background: @selection_color;
+  color: @selection_color_font;
+  text-shadow: none;
+}
+
+html {
+  position: relative;
+  min-width: 320px;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}

@@ -1,0 +1,63 @@
+.svg-bg (@image) {
+  @url_encoded: escape(@image);
+  background: transparent url('data:image/svg+xml;utf8,@{url_encoded}') no-repeat center;
+}
+
+.fix-gpu (@transform: translate3d(0, 0, 0), @backface: hidden) {
+  backface-visibility: @backface;
+  transform: @transform;
+  // will-change: transform;
+}
+
+.appearance (@appearance, @firefox: @appearance) {
+  -webkit-appearance: @appearance;
+  -moz-appearance: @firefox;
+  appearance: @appearance;
+}
+
+.ellipsis () {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.size (@width, @height: @width) {
+  width: @width;
+  height: @height;
+}
+
+.pseudo (@display: block, @content: '') {
+  content: @content;
+  display: @display;
+}
+
+.absolute (@x: 0, @y: @x) {
+  position: absolute;
+  left: @x;
+  top: @y;
+}
+
+.min-size(@w: 0, @h: @w) {
+  min-width: @w;
+  min-height: @h;
+}
+
+.max-size(@w: 100%, @h: @w) {
+  max-width: @w;
+  max-height: @h;
+}
+
+.placeholder (@color:#aaa, @element: 08121991) {
+  @{element}::-webkit-input-placeholder {
+     color: @color;
+  }
+  @{element}:-moz-placeholder {
+     color: @color;
+  }
+  @{element}::-moz-placeholder {
+     color: @color;
+  }
+  @{element}:-ms-input-placeholder {
+     color: @color;
+  }
+}

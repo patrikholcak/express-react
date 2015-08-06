@@ -1,0 +1,30 @@
+a {
+  transition: color 200ms, border-color 200ms;
+  text-decoration: none;
+  color: initial;
+  border-bottom: 1px solid;
+
+  &:hover {
+    border-color: transparent;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+a:focus {
+  outline: thin dotted #333;
+  outline: 2px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+//**
+// * Target only Firefox via http://stackoverflow.com/questions/952861/targeting-only-firefox-with-css
+//
+
+@-moz-document url-prefix() {
+  a:focus, .focusable {
+    outline: none !important;
+  }
+}
